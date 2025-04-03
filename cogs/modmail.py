@@ -53,7 +53,7 @@ class Modmail(commands.Cog):
                         timestamp=datetime.utcnow(),
                         color = discord.Color.pink()
                     )
-                    await channel.send(embed=Embed)
+                    await channel.send(embed=Embed, content="@here")
                 
                 else:
                     content = message.content[:-2]
@@ -68,6 +68,7 @@ class Modmail(commands.Cog):
                             name = f"{message.author.name}",
                             icon_url = f"{message.author.avatar}",)
                     await channel.send(embed= Embed)
+                    await message.add_reaction("✅")
 
 
 async def setup(client):
